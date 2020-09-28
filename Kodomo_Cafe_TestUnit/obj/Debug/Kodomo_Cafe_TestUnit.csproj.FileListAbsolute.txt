@@ -1,0 +1,14 @@
+C:\Users\Brian\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeConsoleApp\Kodomo_Cafe_TestUnit\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Brian\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeConsoleApp\Kodomo_Cafe_TestUnit\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Brian\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeConsoleApp\Kodomo_Cafe_TestUnit\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Brian\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeConsoleApp\Kodomo_Cafe_TestUnit\bin\Debug\Kodomo_Cafe_TestUnit.dll
+C:\Users\Brian\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeConsoleApp\Kodomo_Cafe_TestUnit\bin\Debug\Kodomo_Cafe_TestUnit.pdb
+C:\Users\Brian\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeConsoleApp\Kodomo_Cafe_TestUnit\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Brian\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeConsoleApp\Kodomo_Cafe_TestUnit\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Brian\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeConsoleApp\Kodomo_Cafe_TestUnit\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Brian\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeConsoleApp\Kodomo_Cafe_TestUnit\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Brian\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeConsoleApp\Kodomo_Cafe_TestUnit\obj\Debug\Kodomo_Cafe_TestUnit.csprojAssemblyReference.cache
+C:\Users\Brian\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeConsoleApp\Kodomo_Cafe_TestUnit\obj\Debug\Kodomo_Cafe_TestUnit.csproj.CoreCompileInputs.cache
+C:\Users\Brian\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeConsoleApp\Kodomo_Cafe_TestUnit\obj\Debug\Kodomo_Cafe_TestUnit.csproj.CopyComplete
+C:\Users\Brian\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeConsoleApp\Kodomo_Cafe_TestUnit\obj\Debug\Kodomo_Cafe_TestUnit.dll
+C:\Users\Brian\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeConsoleApp\Kodomo_Cafe_TestUnit\obj\Debug\Kodomo_Cafe_TestUnit.pdb
