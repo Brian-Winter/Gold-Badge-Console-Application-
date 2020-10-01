@@ -10,6 +10,7 @@ namespace Komodo_Claims_Dept_ConsoleApp
     class ProgramUI
     {
 
+        
         private ClaimRepository _contentByClaim = new ClaimRepository();
 
         public void Run()
@@ -65,7 +66,8 @@ namespace Komodo_Claims_Dept_ConsoleApp
 
         }
 
-        //View All Claims
+       // View All Claims
+      
         public void ViewAllClaims()
         {
             Console.Clear();
@@ -74,36 +76,37 @@ namespace Komodo_Claims_Dept_ConsoleApp
             var sortedList = listofClaims.OrderBy(x => x.ClaimID)
                                          .ToList();
 
-                Console.WriteLine($"Claim ID | Type | Description | Amount | DateOfAccident | DateOfClaim | IsValid");
-            foreach(Claim content in sortedList)
+            Console.WriteLine("{0,-8}|{1,-7}|{2,-30}|{3,-8}|{4,-14}|{5,-11}|{6,-7}", "Claim ID",  "Type", "Description",  "Amount", "DateOfAccident", "DateOfClaim", "IsValid");
+            foreach (Claim content in sortedList)
             {
-                Console.WriteLine($"{content.ClaimID}|{content.TypeOfClaim}|{content.Description}|${content.ClaimAmount}|{content.DateOfIncident}|{content.DateOfClaim}|{content.IsValid}");
+               
+            Console.WriteLine($"{content.ClaimID, -8}|{content.TypeOfClaim, -7}|{content.Description,-30}|${content.ClaimAmount,-7}|" +
+                    $"{content.DateOfIncident.ToString("MM/dd/yyyy"), -14}|{content.DateOfClaim.ToString("MM/dd/yyyy"),-11}|{content.IsValid,-7}");
 
             }
         }
 
-        //Complete Claim
+      //  Complete Claim
         public void RemoveCompletedClaim()
         {
 
             List<Claim> listofClaims = _contentByClaim.ViewAllClaims();
 
-            var sortedList = listofClaims.OrderBy(x => x.ClaimID)
-                                         .ToList();
+            var sortedList = new Queue<Claim>(listofClaims);
             int i = 0;
             bool isTrue = true;
             while (isTrue)
             {
-            
                 Console.Clear();
-                Console.WriteLine($"Claim ID : {sortedList[i].ClaimID} ");
-                Console.WriteLine($"Type : {sortedList[i].TypeOfClaim} ");
-                Console.WriteLine($"Description : {sortedList[i].Description} ");
-                Console.WriteLine($"Amount : {sortedList[i].ClaimAmount} ");
-                Console.WriteLine($"DateOfAccident : {sortedList[i].DateOfIncident} ");
-                Console.WriteLine($"DateOfClaim : {sortedList[i].DateOfClaim} ");
-                Console.WriteLine($"IsValid : {sortedList[i].IsValid} ");
+                Console.WriteLine($"Claim ID : {sortedList.Peek().ClaimID} ");
+                Console.WriteLine($"Type : {sortedList.Peek().TypeOfClaim} ");
+                Console.WriteLine($"Description : {sortedList.Peek().Description} ");
+                Console.WriteLine($"Amount : {sortedList.Peek().ClaimAmount} ");
+                Console.WriteLine($"DateOfAccident : {sortedList.Peek().DateOfIncident} ");
+                Console.WriteLine($"DateOfClaim : {sortedList.Peek().DateOfClaim} ");
+                Console.WriteLine($"IsValid : {sortedList.Peek().IsValid} ");
                 Console.WriteLine("");
+
                 Console.WriteLine("Do you want to deal with this claim now(y/n)?");
 
                 string input = Console.ReadLine().ToLower();
@@ -111,23 +114,23 @@ namespace Komodo_Claims_Dept_ConsoleApp
                 switch (input)
                 {
                     case "y":
-                        _contentByClaim.RemoveClaim(sortedList[i].ClaimID);
-                        i++;
+                        sortedList.Dequeue();
+
                         break;
                     case "n":
                         Console.WriteLine("Returning to Main Menu.\n" +
                             "Press any key to continue...");
                         isTrue = false;
                         return;
-                       
+
                     default:
                         Console.WriteLine("Please enter valid option.");
                         break;
                 }
-               
-               
-            }
+           
 
+            }
+           
 
         }
         // Create a New Claim

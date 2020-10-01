@@ -10,6 +10,8 @@ namespace Komodo_Insurance_Badges_ConsoleApp
     {
         static void Main(string[] args)
         {
+            ProgramUI program = new ProgramUI();
+            program.Run();
         }
     }
 }

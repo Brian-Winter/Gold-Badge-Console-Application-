@@ -76,7 +76,7 @@ namespace Komodo_Cafe_ConsoleApp
                     $"Menu Name: {content.MealName}\n" +
                     $"Meal Price: {content.MealPrice}\n" +
                     $"Meal Description: {content.MealDescription}\n" +
-                    $"Meal Ingredients: Unknown Please add\n" +
+                    $"Meal Ingredients: {content.MealIngredientsList[0]}\n" +
                     $"");
             }
 
@@ -121,7 +121,9 @@ namespace Komodo_Cafe_ConsoleApp
             Console.WriteLine("Meal Description:");
             newItem.MealDescription = Console.ReadLine();
             //Ingredients
-
+            Console.WriteLine("Meal Ingredients");
+            string input = Console.ReadLine();
+            newItem.MealIngredientsList.Add(input);
             //Price
             Console.WriteLine("Meal Price:");
             newItem.MealPrice = Convert.ToDecimal(Console.ReadLine());
@@ -150,9 +152,9 @@ namespace Komodo_Cafe_ConsoleApp
         //Test Menu Items
         public void SeedContentList()
         {
-            Menu FirstItem = new Menu("CheeseBurger", 1, "Hamburger with a bun and cheese", 2.52m);
-            Menu secondItem = new Menu("HamBurger", 5, "Hamburger with a bun", 2.25m);
-            Menu thirdItem = new Menu("Hot Dog", 3, "A juicy hot dog", 1.50m);
+            Menu FirstItem = new Menu("CheeseBurger", 1, "Hamburger with a bun and cheese", "food", 2.52m);
+            Menu secondItem = new Menu("HamBurger", 5, "Hamburger with a bun", "food", 2.25m);
+            Menu thirdItem = new Menu("Hot Dog", 3, "A juicy hot dog", "food", 1.50m);
 
 
             _contentOfMenuRepository.AddNewMenuItem(FirstItem);

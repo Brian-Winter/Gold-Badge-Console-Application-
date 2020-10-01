@@ -13,7 +13,7 @@ namespace Kodomo_Cafe_TestUnit
         [TestMethod]
         public void TestMethod1()
         {
-            Menu thirdItem = new Menu("Hot Dog", 3, "A juicy hot dog", 1.50m);
+            Menu thirdItem = new Menu("Hot Dog", 3, "A juicy hot dog", "food", 1.50m);
 
             menuRepository.AddNewMenuItem(thirdItem);
 

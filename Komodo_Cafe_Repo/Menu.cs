@@ -13,7 +13,7 @@ namespace Komodo_Cafe_Repo
 
         public string MealDescription { get; set; }
 
-      //  public List<string> MealIngredientsList { get; set; } = new List<string>();
+        public List<string> MealIngredientsList { get; set; } = new List<string>();
 
         public string Ingredients { get; set; }
         public decimal MealPrice { get; set; }
@@ -21,12 +21,12 @@ namespace Komodo_Cafe_Repo
 
 
         public Menu() { }
-        public Menu(string mealName, int mealNumber, string mealDescription, decimal mealPrice)
+        public Menu(string mealName, int mealNumber, string mealDescription, string mealIngredients, decimal mealPrice)
         {
             MealName = mealName;
             MealNumber = mealNumber;
             MealDescription = mealDescription;
-          //  MealIngredients = mealIngredients;
+            MealIngredientsList.Add(mealIngredients);
             MealPrice = mealPrice;
         }
     }

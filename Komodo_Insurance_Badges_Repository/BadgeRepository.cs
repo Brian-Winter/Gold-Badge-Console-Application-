@@ -8,39 +8,57 @@ namespace Komodo_Insurance_Badges_Repository
 {
     public class BadgeRepository
     {
-        private List<Badge> _listofBadges = new List<Badge>();
+       
                                                                     
         private Badge CreateBadges = new Badge();
 
-        Dictionary<int, string> Badges = new Dictionary<int, string>();
+        Dictionary<int, Badge> Badges = new Dictionary<int, Badge>();
             
         
-        public void Doors()
-        {
-            for(int i = 0; i < 10; i++)
-            {
-                CreateBadges.DoorNames.Add("A" + i.ToString());
-                CreateBadges.DoorNames.Add("B" + i.ToString());
-                
-            }
-        }
-        public void TestMe(int badgeId, string badgeName)
+        public void AddNewBadge(int badgeId, Badge badge)
         {
             
-            Badges.Add(badgeId, badgeName);
+            Badges.Add(badgeId, badge);
         }
-        public void Loop()
+      
+
+        public Dictionary<int, Badge> ViewAllBadges()
         {
-            foreach (string content in CreateBadges.DoorNames)
-            {
-                Console.WriteLine(content);
-            }
+            return Badges;
         }
 
-        public List<Badge> ViewAllBadges()
+        public void AddDoorNumber(int dictKey)
         {
-            return _listofBadges;
+
+            string newDoorNumber = Console.ReadLine();
+            Badges[dictKey].DoorNames.Add(newDoorNumber);
+            Console.WriteLine("Door has been added.");
         }
+
+        public void RemoveDoorNumber(int dictKey)
+        {
+
+            string newDoorNumber = Console.ReadLine();
+            Badges[dictKey].DoorNames.Remove(newDoorNumber);
+            Console.WriteLine("Door has been removed.");
+        }
+
+       
+        public bool CheckIfKeyExists(int key)
+        {
+            bool doesExists = Badges.ContainsKey(key);
+            if (!doesExists)
+            {
+               
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+       
         
+
     }
 }

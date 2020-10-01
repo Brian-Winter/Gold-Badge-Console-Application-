@@ -13,11 +13,11 @@ namespace Komodo_Insurance_Badges_Repository
         public string BadgeName { get; set; }
 
         public Badge() { }
-        public Badge(int badgeId, List<string> doorNames, string badgeName)
+        public Badge(int badgeId,string  doorNames)
         {
             BadgeID = badgeId;
-            DoorNames = doorNames;
-            BadgeName = badgeName;
+            DoorNames.Add(doorNames);
+           
         }
     }
 
