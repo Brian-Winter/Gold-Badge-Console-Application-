@@ -8,45 +8,60 @@ namespace Kodomo_Cafe_TestUnit
     public class UnitTest1
     {
         private Menu _testMenu = new Menu();
-        private List<Menu> _testMenuProperties = new List<Menu>();
+    
         private MenuRepository menuRepository = new MenuRepository();
         [TestMethod]
-        public void TestMethod1()
+        public void AddTest()
         {
             Menu thirdItem = new Menu("Hot Dog", 3, "A juicy hot dog", "food", 1.50m);
 
             menuRepository.AddNewMenuItem(thirdItem);
-
-
-
-           
-
-            Console.WriteLine(menuRepository.GetContentbyName("hot dog"));
-
-            Console.WriteLine(menuRepository.GetContentbyNumber(3));
-
-            Console.WriteLine(menuRepository.RemoveMenuItem("hot dog"));
+            
         }
-          private void ViewMenuList()
+
+        [TestMethod]
+        public void RemovalTest()
         {
+            Menu thirdItem = new Menu("Hot Dog", 3, "A juicy hot dog", "food", 1.50m);
+           //  menuRepository.AddNewMenuItem(thirdItem); Allows true statement
 
-            Console.Clear();
-            List<Menu> listofMenuItems = menuRepository.ViewAllMenuItems();
+            Console.WriteLine(menuRepository.RemoveMenuItem("Hot Dog"));
 
-            var sortedMenu = listofMenuItems.OrderBy(x => x.MealNumber)
-                                            .ToList();
-
-            foreach(Menu content in sortedMenu)
-            {
-                Console.WriteLine($"Meal Number: {content.MealNumber}\n" +
-                    $"Menu Name: {content.MealName}\n" +
-                    $"Meal Price: {content.MealPrice}\n" +
-                    $"Meal Description: {content.MealDescription}\n" +
-                    $"Meal Ingredients: Unknown Please add\n" +
-                    $"");
-            }
-
-
+            
         }
+        [TestMethod]
+        public void GetContentByNameTest()
+        {
+            Menu thirdItem = new Menu("Hot Dog", 3, "A juicy hot dog", "food", 1.50m);
+            menuRepository.AddNewMenuItem(thirdItem);
+
+            Console.WriteLine(menuRepository.GetContentbyName("hot dog").MealNumber);
+        }
+        [TestMethod]
+        public void GetContentByNumberTest()
+        {
+            Menu thirdItem = new Menu("Hot Dog", 3, "A juicy hot dog", "food", 1.50m);
+            menuRepository.AddNewMenuItem(thirdItem);
+
+            Console.WriteLine(menuRepository.GetContentbyNumber(3).MealName);
+        }
+        [TestMethod]
+        public void ViewAllTest()
+        {
+            Menu FirstItem = new Menu("CheeseBurger", 1, "Hamburger with a bun and cheese", "food", 2.52m);
+            Menu secondItem = new Menu("HamBurger", 5, "Hamburger with a bun", "food", 2.25m);
+            Menu thirdItem = new Menu("Hot Dog", 3, "A juicy hot dog", "food", 1.50m);
+
+
+            menuRepository.AddNewMenuItem(FirstItem);
+            menuRepository.AddNewMenuItem(secondItem);
+            menuRepository.AddNewMenuItem(thirdItem);
+
+            Console.WriteLine(menuRepository.ViewAllMenuItems()[0].MealNumber);
+            Console.WriteLine(menuRepository.ViewAllMenuItems()[1].MealNumber);
+            Console.WriteLine(menuRepository.ViewAllMenuItems()[2].MealNumber);
+            Console.WriteLine("There are: " + menuRepository.ViewAllMenuItems().Count);
+        }
+
     }
 }

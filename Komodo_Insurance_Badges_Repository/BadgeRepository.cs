@@ -57,8 +57,27 @@ namespace Komodo_Insurance_Badges_Repository
                 return true;
             }
         }
-       
-        
+        public void ReadAllBadges()
+        {
+            Dictionary<int, Badge> allBadges = ViewAllBadges();
+            Console.Clear();
+            Console.WriteLine("{0,-8}{1}", "Badge#", "Door Access");
+
+            foreach (KeyValuePair<int, Badge> content in allBadges)
+            {
+
+
+
+                Console.WriteLine($"{content.Key,-8}{string.Join(", ", content.Value.DoorNames)}");
+            }
+        }
+        public void DisplayDoorAccess(int key)
+        {
+            foreach(KeyValuePair<int, Badge> kvp in Badges)
+            {
+                Console.WriteLine($"Badge: {key}, has access to doors {string.Join(", ",kvp.Value.DoorNames)}");
+            }
+        }
 
     }
 }

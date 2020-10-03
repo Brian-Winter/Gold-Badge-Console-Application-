@@ -12,7 +12,7 @@ namespace Komodo_Insurance_Badges_UnitTest
         private Badge _testBadges = new Badge();
         private List<BadgeRepository> _testDictionary = new List<BadgeRepository>();
         [TestMethod]
-        public void TestMethod1()
+        public void AddNewBadgeTest()
         {
            
             _testBadgeMethods.AddNewBadge(1, new Badge(1, "a7"));
@@ -22,7 +22,7 @@ namespace Komodo_Insurance_Badges_UnitTest
 
         }
         [TestMethod]
-        public void TestMethod2()
+        public void ViewAllBadgesTest()
         {
             _testBadgeMethods.AddNewBadge(1, new Badge(1, "a7"));
             _testBadgeMethods.AddNewBadge(2, new Badge(2, "a7"));
@@ -37,18 +37,18 @@ namespace Komodo_Insurance_Badges_UnitTest
             }
         }
         [TestMethod]
-        public void TestMethod3()
+        public void CheckIfKeyExistsTest()
         {
             _testBadgeMethods.CheckIfKeyExists(1);
             Console.WriteLine(_testBadgeMethods.CheckIfKeyExists(1));
         }
 
-        //[TestMethod]
-        //public void TestMethod4()
-        //{
-        //    _testBadgeMethods.AddNewBadge(1, new Badge(1, "a7"));
-        //    _testBadgeMethods.AddDoorNumber(1);
+        [TestMethod]
+        public void DisplayDoorAccessTest()
+        {
+            _testBadgeMethods.AddNewBadge(1, new Badge(1, "a7"));
 
-        //}
+            _testBadgeMethods.DisplayDoorAccess(4);
+        }
     }
 }

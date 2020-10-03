@@ -43,7 +43,7 @@ namespace Komodo_Insurance_Badges_ConsoleApp
                         break;
                     case "3":
                         //List all badges
-                        ReadAllBadges();
+                        _contentOfBadgeRepo.ReadAllBadges();
                         break;
                     case "4":
                         isRunning = false;
@@ -98,6 +98,7 @@ namespace Komodo_Insurance_Badges_ConsoleApp
             //Edit a Badge
         private void EditBadge()
         {
+            Dictionary<int, Badge> findDoorsWithBadge = _contentOfBadgeRepo.ViewAllBadges();
             Console.Clear();
             Console.WriteLine("What is the badge number to update?");
                    
@@ -107,6 +108,9 @@ namespace Komodo_Insurance_Badges_ConsoleApp
                 Console.WriteLine("Badge Number does not exist");
                 return;
             }
+            Console.Clear();
+            _contentOfBadgeRepo.DisplayDoorAccess(editedBadge);
+            Console.WriteLine(" ");
             Console.WriteLine("What would you like to do?\n" +
                 "1. Remove a door\n" +
                 "2. Add a door\n" +
@@ -145,19 +149,19 @@ namespace Komodo_Insurance_Badges_ConsoleApp
         }
 
         //List all badges
-        public void ReadAllBadges()
-        {
-           Dictionary<int, Badge> allBadges =  _contentOfBadgeRepo.ViewAllBadges();
-            Console.Clear();
-            Console.WriteLine("{0,-8}{1}", "Badge#", "Door Access");
+        //public void ReadAllBadges()
+        //{
+        //   Dictionary<int, Badge> allBadges =  _contentOfBadgeRepo.ViewAllBadges();
+        //    Console.Clear();
+        //    Console.WriteLine("{0,-8}{1}", "Badge#", "Door Access");
           
-            foreach (KeyValuePair<int, Badge> content in allBadges)
-            {
+        //    foreach (KeyValuePair<int, Badge> content in allBadges)
+        //    {
                 
                 
                
-                Console.WriteLine($"{content.Key,-8}{string.Join(", ", content.Value.DoorNames)}");
-            }
-        }
+        //        Console.WriteLine($"{content.Key,-8}{string.Join(", ", content.Value.DoorNames)}");
+        //    }
+        //}
     }
 }

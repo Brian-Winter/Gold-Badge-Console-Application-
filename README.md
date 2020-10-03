@@ -16,15 +16,16 @@
 #### Projects
 
 **Project One - Komodo Cafe**
+
 This project is used to  create menu items, and within these items, create a number, price and a list of ingredients. It allows a person to remove menu items and view all items they have created. 
 
 **Project Two - Komodo Claims Dept**
 
-​The Komodo Claims Dept project highlights similar uses as the Komodo Cafe, but adds in Queue that will list many of the properties without removing from the entire list.
+The Komodo Claims Dept project highlights similar uses as the Komodo Cafe, but adds in Queue that will list many of the properties without removing from the entire list.
 
 **Project Three - Komodo Insurance Badges**
 
-​		The final project allows one to use a dictionary to create a Badge and allow the badge to access only certain doors. The program can add and remove doors to the selected badges. Finally, it will also display all badges and which doors each badge has access in a blocked text view. 
+​The final project allows one to use a dictionary to create a Badge and allow the badge to access only certain doors. The program can add and remove doors to the selected badges. Finally, it will also display all badges and which doors each badge has access in a blocked text view. 
 
 ##### Credits 
 
