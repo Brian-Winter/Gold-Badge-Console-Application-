@@ -90,9 +90,9 @@ namespace Komodo_Claims_Dept_ConsoleApp
         public void RemoveCompletedClaim()
         {
 
-            List<Claim> listofClaims = _contentByClaim.ViewAllClaims();
+            Queue<Claim> sortedList =  new Queue<Claim>(_contentByClaim.ViewAllClaims());
 
-            var sortedList = new Queue<Claim>(listofClaims);
+           // var sortedList = new Queue<Claim>(listofClaims);
             int i = 0;
             bool isTrue = true;
             while (isTrue)

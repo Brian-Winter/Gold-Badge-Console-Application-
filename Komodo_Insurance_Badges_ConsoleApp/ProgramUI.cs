@@ -155,7 +155,7 @@ namespace Komodo_Insurance_Badges_ConsoleApp
             {
                 
                 
-                //foreach(string doorContent in content.Value.DoorNames)
+               
                 Console.WriteLine($"{content.Key,-8}{string.Join(", ", content.Value.DoorNames)}");
             }
         }
